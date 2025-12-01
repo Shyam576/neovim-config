@@ -1,16 +1,17 @@
 ## 📋 Table of Contents
 
 1. Leader Key
-2. File Management
-3. Window Navigation
-4. Buffer Management
-5. Telescope (Fuzzy Finder)
-6. LSP Features
-7. Git Integration
-8. Code Editing
-9. Terminal
-10. Plugin Management
-11. Installed Plugins
+2. Visual Mode
+3. File Management
+4. Window Navigation
+5. Buffer Management
+6. Telescope (Fuzzy Finder)
+7. LSP Features
+8. Git Integration
+9. Code Editing
+10. Terminal
+11. Plugin Management
+12. Installed Plugins
 
 ---
 
@@ -21,7 +22,23 @@
 All shortcuts starting with `<leader>` mean you press `Space` first, then the key combination.
 
 ---
+### Paragraphs
+- `vap` - select A paragraph (including surrounding blank lines)
+- `vip` - select INNER paragraph (excluding blank lines)
 
+### Words 
+- `viw` - select inner word 
+- `vaw` - select a word (including spaces)
+
+### Sentences 
+- `vis` - inner sentence 
+- `vas` - a sentence 
+
+### Brackets 
+- `vi(` - inside parentheses 
+- `va(` - around parentheses 
+
+---
 ## 🗂️ File Management
 
 | Shortcut     | Action        | Description                          |
