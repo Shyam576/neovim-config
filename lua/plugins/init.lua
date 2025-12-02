@@ -48,6 +48,9 @@ require('lazy').setup({
   { 'glepnir/lspsaga.nvim', branch = 'main', config = true },
   { 'folke/trouble.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}, config = true },
 
+  -- {'stevearc/aerial.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}, config = function() require('plugins.aerial')end },
+  -- {'dstein64/nvim-scrollview', config = true },
+
   -- sessions and persistence
   { 'folke/persistence.nvim' },
 })
