@@ -14,6 +14,7 @@ require('lazy').setup({
 
   -- telescope
   { 'nvim-telescope/telescope.nvim', dependencies = {'nvim-lua/plenary.nvim'}, config = function() require('plugins.telescope') end },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
   -- treesitter
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', config = function() require('plugins.treesitter') end },
@@ -30,8 +31,11 @@ require('lazy').setup({
   { 'windwp/nvim-autopairs', config = true },
   { 'kylechui/nvim-surround', config = true },
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', config = true },
-  { 'stevearc/conform.nvim' },
+  { 'stevearc/conform.nvim', config = function() require('plugins.conform') end },
   { 'akinsho/toggleterm.nvim', config = true },
+  
+  -- navigation
+  { 'ThePrimeagen/harpoon', branch = 'harpoon2', dependencies = {'nvim-lua/plenary.nvim'}, config = function() require('plugins.harpoon') end },
 
   -- ui
   { 'nvim-lualine/lualine.nvim', config = function() require('plugins.ui') end },

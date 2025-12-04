@@ -30,6 +30,14 @@ map('n', '<leader>fb', function() require('telescope.builtin').buffers() end, op
 map('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, opts)
 map('t', '<Esc>', '<C-\\><C-n>', opts)
 
+-- Harpoon keymaps
+map('n', '<leader>a', function() require('harpoon'):list():add() end, opts)
+map('n', '<C-e>', function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end, opts)
+map('n', '<C-1>', function() require('harpoon'):list():select(1) end, opts)
+map('n', '<C-2>', function() require('harpoon'):list():select(2) end, opts)
+map('n', '<C-3>', function() require('harpoon'):list():select(3) end, opts)
+map('n', '<C-4>', function() require('harpoon'):list():select(4) end, opts)
+
 
 --- open and close terminals
 map('n', '<leader>t1', '<cmd>1ToggleTerm<CR>', opts)
