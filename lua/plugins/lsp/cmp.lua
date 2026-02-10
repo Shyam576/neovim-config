@@ -21,6 +21,12 @@ cmp.setup({
     }),
   }),
   
+  -- Window styling for better visibility
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  
   sources = cmp.config.sources({
     { 
       name = 'nvim_lsp',
@@ -37,13 +43,28 @@ cmp.setup({
   
   formatting = {
     format = function(entry, vim_item)
-      -- Show source name
-      vim_item.menu = ({
+      -- Add icon for auto-import items
+      local completion_item = entry:get_completion_item()
+      if completion_item.labelDetails then
+        vim_item.menu = completion_item.labelDetails.description or vim_item.menu
+      end
+      
+      -- Show source and indicate auto-imports
+      local source_name = ({
         nvim_lsp = '[LSP]',
         luasnip = '[Snip]',
         buffer = '[Buf]',
         path = '[Path]',
-      })[entry.source.name]
+      })[entry.source.name] or ''
+      
+      -- Add indicator if this completion will auto-import
+      if completion_item.additionalTextEdits or 
+         (completion_item.labelDetails and completion_item.labelDetails.detail) then
+        vim_item.menu = source_name .. ' 󰳛'  -- icon indicating auto-import
+      else
+        vim_item.menu = source_name
+      end
+      
       return vim_item
     end,
   },
