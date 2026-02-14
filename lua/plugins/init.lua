@@ -32,7 +32,7 @@ require('lazy').setup({
   { 'kylechui/nvim-surround', config = true },
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', config = true },
   { 'stevearc/conform.nvim', config = function() require('plugins.conform') end },
-  { 'akinsho/toggleterm.nvim', config = true },
+  { 'akinsho/toggleterm.nvim', config = function() require('plugins.toggleterm') end },
   
   -- navigation
   { 'ThePrimeagen/harpoon', branch = 'harpoon2', dependencies = {'nvim-lua/plenary.nvim'}, config = function() require('plugins.harpoon') end },

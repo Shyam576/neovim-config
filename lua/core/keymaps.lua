@@ -10,9 +10,11 @@ map('n', '<C-j>', '<C-w>j', opts)
 map('n', '<C-k>', '<C-w>k', opts)
 map('n', '<C-l>', '<C-w>l', opts)
 
--- Reduce or increase window size
-map("n", "<leader>=", "<C-w>>", opts)
-map("n", "<leader>-", "<C-w><", opts)
+-- Reduce or increase window size (by 5 columns for faster resizing)
+map("n", "<leader>=", "<cmd>vertical resize +5<CR>", opts)  -- Increase width
+map("n", "<leader>-", "<cmd>vertical resize -5<CR>", opts)  -- Decrease width
+map("n", "<leader>+", "<cmd>horizontal resize +3<CR>", opts) -- Increase height
+map("n", "<leader>_", "<cmd>horizontal resize -3<CR>", opts) -- Decrease height
 
 map('n', '<leader>h', ':bp<CR>', opts)
 map('n', '<leader>l', ':bn<CR>', opts)
@@ -39,13 +41,15 @@ map('n', '<C-3>', function() require('harpoon'):list():select(3) end, opts)
 map('n', '<C-4>', function() require('harpoon'):list():select(4) end, opts)
 
 
---- open and close terminals
-map('n', '<leader>t1', '<cmd>1ToggleTerm<CR>', opts)
-map('n', '<leader>t2', '<cmd>2ToggleTerm<CR>', opts)
-map('n', '<leader>t3', '<cmd>3ToggleTerm<CR>', opts)
-map('n', '<leader>tf', '<cmd>ToggleTerm direction=float<CR>', opts)   -- Floating terminal
-map('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', opts) -- Horizontal split
-map('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<CR>', opts) -- Vertical split
+--- open and close terminals with specific IDs (won't disappear, just toggle)
+map('n', '<leader>t1', '<cmd>1ToggleTerm direction=horizontal<CR>', opts)  -- Terminal 1 (horizontal)
+map('n', '<leader>t2', '<cmd>2ToggleTerm direction=horizontal<CR>', opts)  -- Terminal 2 (horizontal)
+map('n', '<leader>t3', '<cmd>3ToggleTerm direction=horizontal<CR>', opts)  -- Terminal 3 (horizontal)
+map('n', '<leader>tf', '<cmd>ToggleTerm direction=float<CR>', opts)        -- Floating terminal
+map('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>', opts)   -- Horizontal split
+map('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<CR>', opts)     -- Vertical split
+map('n', '<C-\\>', '<cmd>ToggleTerm<CR>', opts)                             -- Quick toggle with Ctrl+\
+map('t', '<C-\\>', '<cmd>ToggleTerm<CR>', opts)                             -- Quick toggle from terminal mode
 
 map('n', '<leader>sv', ':vsplit<CR>', opts)
 map('n', '<leader>sh', ':split<CR>', opts)
