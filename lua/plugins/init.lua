@@ -57,6 +57,16 @@ require('lazy').setup({
 
   -- sessions and persistence
   { 'folke/persistence.nvim' },
+
+  -- github copilot
+  { 'zbirenbaum/copilot.lua', cmd = 'Copilot', event = 'InsertEnter', config = function() require('plugins.copilot') end },
+  { 'zbirenbaum/copilot-cmp', dependencies = { 'zbirenbaum/copilot.lua' }, config = true },
+  {
+    'CopilotC-Nvim/CopilotChat.nvim',
+    dependencies = { 'zbirenbaum/copilot.lua', 'nvim-lua/plenary.nvim' },
+    build = 'make tiktoken',
+    config = function() require('plugins.copilot-chat') end,
+  },
 })
 
 -- load lsp setup

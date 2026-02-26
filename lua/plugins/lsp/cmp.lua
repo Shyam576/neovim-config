@@ -28,6 +28,7 @@ cmp.setup({
   },
   
   sources = cmp.config.sources({
+    { name = 'copilot', priority = 11 },
     { 
       name = 'nvim_lsp',
       priority = 10,
@@ -51,6 +52,7 @@ cmp.setup({
       
       -- Show source and indicate auto-imports
       local source_name = ({
+        copilot = '[Copilot]',
         nvim_lsp = '[LSP]',
         luasnip = '[Snip]',
         buffer = '[Buf]',
