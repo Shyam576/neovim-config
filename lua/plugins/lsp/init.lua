@@ -95,9 +95,6 @@ local on_attach = function(client, bufnr)
   if client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
   end
-  
-  -- Print confirmation that LSP attached
-  print(string.format('LSP attached: %s', client.name))
 end
 
 require('plugins.lsp.servers').setup({ capabilities = capabilities, on_attach = on_attach })

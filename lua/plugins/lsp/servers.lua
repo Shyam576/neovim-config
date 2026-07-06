@@ -30,6 +30,12 @@ function M.setup(opts)
         'typescript', 'typescriptreact', 'typescript.tsx'
       }
       cfg.root_markers = { 'tsconfig.json', 'package.json', 'jsconfig.json', '.git' }
+      -- conform.lua (eslint_d/prettier) owns formatting; avoid ts_ls and eslint both formatting on save
+      cfg.on_attach = function(client, bufnr)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+        opts.on_attach(client, bufnr)
+      end
       cfg.settings = {
         typescript = {
           inlayHints = {
