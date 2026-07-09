@@ -156,6 +156,27 @@ Shows changes in the gutter (left side):
 - Blue `~` - Modified lines
 - Red `-` - Deleted lines
 
+|Shortcut|Action|Description|
+|---|---|---|
+|`]c`|Next Hunk|Jump to next changed hunk|
+|`[c`|Previous Hunk|Jump to previous changed hunk|
+|`<leader>hp`|Preview Hunk|Show hunk diff in a popup|
+|`<leader>hs`|Stage Hunk|Stage the hunk under cursor|
+|`<leader>hr`|Reset Hunk|Discard changes in the hunk under cursor|
+|`<leader>hu`|Undo Stage Hunk|Unstage the last staged hunk|
+|`<leader>hb`|Toggle Line Blame|Show/hide inline git blame for current line|
+|`<leader>hd`|Diff This|Diff current buffer against the index|
+
+### Diffview (Review all uncommitted changes)
+
+Useful for reviewing everything changed across the repo before committing, e.g. after an AI agent has edited multiple files.
+
+|Shortcut|Action|Description|
+|---|---|---|
+|`<leader>gd`|Open Diffview|Show a file tree + diff of every changed file|
+|`<leader>gc`|Close Diffview|Close the diff view|
+|`<leader>gh`|File History|Show commit history for the current file|
+
 ### Vim Fugitive Commands
 
 |Command|Action|
@@ -238,6 +259,12 @@ Shows vertical lines for indentation levels - helps visualize code structure
 
 ---
 
+## ⚙️ Config Management
+
+|Shortcut|Command|Description|
+|---|---|---|
+|`<leader>rc`|`:ReloadConfig`|Reload options, keymaps and autocmds without restarting Neovim (plugin spec changes still need a restart)|
+
 ## 📦 Plugin Management (Lazy.nvim)
 
 | Command        | Action                       |
@@ -281,6 +308,7 @@ Shows vertical lines for indentation levels - helps visualize code structure
 
 - **gitsigns.nvim** - Git decorations in gutter
 - **vim-fugitive** - Git commands
+- **diffview.nvim** - Full-repo diff review for uncommitted changes
 
 ### Code Editing
 
