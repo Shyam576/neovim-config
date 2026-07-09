@@ -24,6 +24,9 @@ map('n', '<leader>bd', ':Bdelete<CR>', opts)
 map('n', '<Esc>', ':nohlsearch<CR>', opts)
 map('n', '<leader>nh', ':nohlsearch<CR>', opts)
 
+-- Reload config without restarting Neovim
+map('n', '<leader>rc', ':ReloadConfig<CR>', opts)
+
 -- Telescope keymaps (lazy-loaded)
 map('n', '<leader>ff', function() require('telescope.builtin').find_files() end, opts)
 map('n', '<leader>fg', function() require('telescope.builtin').live_grep() end, opts)
