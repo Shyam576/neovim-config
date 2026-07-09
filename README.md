@@ -265,6 +265,17 @@ Shows vertical lines for indentation levels - helps visualize code structure
 |---|---|---|
 |`<leader>rc`|`:ReloadConfig`|Reload options, keymaps and autocmds without restarting Neovim (plugin spec changes still need a restart)|
 
+### Sessions (persistence.nvim)
+
+Automatically saves your open buffers/layout per project directory on exit.
+
+|Shortcut|Action|Description|
+|---|---|---|
+|`<leader>sr`|Restore Session|Restore the session for the current directory|
+|`<leader>sl`|Restore Last Session|Restore the most recently saved session (any directory)|
+|`<leader>sc`|Select Session|Pick a session to restore from a list|
+|`<leader>sd`|Stop Session|Stop saving a session on exit (for this Neovim instance)|
+
 ## 📦 Plugin Management (Lazy.nvim)
 
 | Command        | Action                       |

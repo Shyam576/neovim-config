@@ -64,6 +64,12 @@ map('n', '<leader>sh', ':split<CR>', opts)
 map('n', '<leader>sx', ':close<CR>', opts)
 map('n', '<leader>se', '<C-w>=', opts)
 
+-- Session management (persistence.nvim)
+map('n', '<leader>sr', function() require('persistence').load() end, opts)
+map('n', '<leader>sl', function() require('persistence').load({ last = true }) end, opts)
+map('n', '<leader>sc', function() require('persistence').select() end, opts)
+map('n', '<leader>sd', function() require('persistence').stop() end, opts)
+
 -- map('n', '<leader>a', '<cmd>AerialToggle<CR>', opts)     -- Toggle outline
 -- map('n', '<leader>ao', '<cmd>AerialOpen<CR>', opts)      -- Open outline
 -- map('n', '<leader>ac', '<cmd>AerialClose<CR>', opts)     -- Close outline

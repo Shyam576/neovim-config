@@ -57,7 +57,7 @@ require('lazy').setup({
   -- {'dstein64/nvim-scrollview', config = true },
 
   -- sessions and persistence
-  { 'folke/persistence.nvim' },
+  { 'folke/persistence.nvim', config = function() require('plugins.persistence') end },
 
   -- github copilot
   { 'zbirenbaum/copilot.lua', cmd = 'Copilot', event = 'InsertEnter', config = function() require('plugins.copilot') end },
