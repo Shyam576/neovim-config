@@ -135,6 +135,28 @@ These work when you're editing code files (JavaScript, TypeScript, Rust, Python,
 - `[d` - Previous diagnostic
 - Errors and warnings show inline and in the left gutter
 
+### Diagnostics List (Trouble)
+
+|Shortcut|Action|Description|
+|---|---|---|
+|`<leader>xx`|Diagnostics|Toggle project-wide diagnostics list|
+|`<leader>xX`|Buffer Diagnostics|Toggle diagnostics list for current buffer only|
+|`<leader>xL`|Location List|Toggle the location list in Trouble|
+|`<leader>xQ`|Quickfix List|Toggle the quickfix list in Trouble|
+|`<leader>cs`|Symbols|Toggle document symbols outline|
+|`<leader>cl`|LSP References|Toggle LSP references/definitions list|
+
+### Todo Comments
+
+Highlights `TODO`, `FIXME`, `HACK`, `NOTE` (etc.) comments with icons.
+
+|Shortcut|Action|Description|
+|---|---|---|
+|`]t`|Next Todo|Jump to next todo comment|
+|`[t`|Previous Todo|Jump to previous todo comment|
+|`<leader>st`|Search Todos|List all todo comments in Telescope|
+|`<leader>xt`|Todos (Trouble)|List all todo comments in Trouble|
+
 ### Auto-format on Save
 
 Files are automatically formatted when you save:
@@ -145,6 +167,16 @@ Files are automatically formatted when you save:
 - `.py` (Python)
 - `.json` (JSON)
 
+
+### Folding (nvim-ufo)
+
+Treesitter-based code folding with a nicer fold preview. Files open fully unfolded.
+
+|Shortcut|Action|Description|
+|---|---|---|
+|`zR`|Open All Folds|Unfold everything in the buffer|
+|`zM`|Close All Folds|Fold everything in the buffer|
+|`zK`|Peek Fold|Preview a folded region without opening it|
 
 ## 🔀 Git Integration
 
@@ -259,6 +291,21 @@ Shows vertical lines for indentation levels - helps visualize code structure
 
 ---
 
+## 🚀 Dashboard (alpha-nvim)
+
+Shown on startup when Neovim opens with no file argument.
+
+|Key|Action|
+|---|---|
+|`f`|Find file|
+|`g`|Live grep|
+|`r`|Restore session for current directory|
+|`l`|Restore last session|
+|`n`|New file|
+|`q`|Quit|
+
+Also enabled: **mini.animate** (smooth cursor/scroll movement) and **nvim-colorizer.lua** (inline preview of hex/CSS colors) — both work passively with no keymaps needed.
+
 ## ⚙️ Config Management
 
 |Shortcut|Command|Description|
@@ -332,6 +379,7 @@ Automatically saves your open buffers/layout per project directory on exit.
 
 - **lspsaga.nvim** - Enhanced LSP UI
 - **trouble.nvim** - Diagnostics list
+- **todo-comments.nvim** - Highlights TODO/FIXME/HACK comments
 
 ### Utilities
 
@@ -339,6 +387,16 @@ Automatically saves your open buffers/layout per project directory on exit.
 - **conform.nvim** - Code formatter
 - **bufdelete.nvim** - Better buffer deletion
 - **persistence.nvim** - Session management
+
+### Folding
+
+- **nvim-ufo** - Treesitter-based code folding with fold preview
+
+### Fun & Polish
+
+- **alpha-nvim** - Startup dashboard
+- **mini.animate** - Smooth cursor/scroll animations
+- **nvim-colorizer.lua** - Inline hex/CSS color preview
 
 ---
 

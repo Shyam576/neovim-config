@@ -75,3 +75,22 @@ map('n', '<leader>sd', function() require('persistence').stop() end, opts)
 -- map('n', '<leader>ac', '<cmd>AerialClose<CR>', opts)     -- Close outline
 -- map('n', '<leader>an', '<cmd>AerialNavToggle<CR>', opts) -- Toggle floating nav
 
+-- Trouble (diagnostics/quickfix/loclist list)
+map('n', '<leader>xx', '<cmd>Trouble diagnostics toggle<CR>', opts)
+map('n', '<leader>xX', '<cmd>Trouble diagnostics toggle filter.buf=0<CR>', opts)
+map('n', '<leader>xL', '<cmd>Trouble loclist toggle<CR>', opts)
+map('n', '<leader>xQ', '<cmd>Trouble qflist toggle<CR>', opts)
+map('n', '<leader>cs', '<cmd>Trouble symbols toggle focus=false<CR>', opts)
+map('n', '<leader>cl', '<cmd>Trouble lsp toggle focus=false win.position=right<CR>', opts)
+
+-- Todo comments
+map('n', ']t', function() require('todo-comments').jump_next() end, opts)
+map('n', '[t', function() require('todo-comments').jump_prev() end, opts)
+map('n', '<leader>st', '<cmd>TodoTelescope<CR>', opts)
+map('n', '<leader>xt', '<cmd>Trouble todo toggle<CR>', opts)
+
+-- Folding (nvim-ufo)
+map('n', 'zR', function() require('ufo').openAllFolds() end, opts)
+map('n', 'zM', function() require('ufo').closeAllFolds() end, opts)
+map('n', 'zK', function() require('ufo').peekFoldedLinesUnderCursor() end, opts)
+

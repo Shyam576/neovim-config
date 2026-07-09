@@ -52,6 +52,10 @@ require('lazy').setup({
   -- diagnostics / lsp ui
   { 'glepnir/lspsaga.nvim', branch = 'main', config = true },
   { 'folke/trouble.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}, config = true },
+  { 'folke/todo-comments.nvim', dependencies = {'nvim-lua/plenary.nvim'}, config = function() require('plugins.todo-comments') end },
+
+  -- folding
+  { 'kevinhwang91/nvim-ufo', dependencies = {'kevinhwang91/promise-async'}, config = function() require('plugins.ufo') end },
 
   -- {'stevearc/aerial.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}, config = function() require('plugins.aerial')end },
   -- {'dstein64/nvim-scrollview', config = true },
@@ -65,6 +69,11 @@ require('lazy').setup({
 
   -- markdown rendering
   { 'MeanderingProgrammer/render-markdown.nvim', dependencies = {'nvim-treesitter/nvim-treesitter','nvim-tree/nvim-web-devicons'}, ft = {'markdown'}, config = function() require('plugins.render-markdown') end },
+
+  -- polish / fun
+  { 'goolord/alpha-nvim', dependencies = {'nvim-tree/nvim-web-devicons'}, config = function() require('plugins.alpha') end },
+  { 'echasnovski/mini.animate', version = false, config = function() require('plugins.mini-animate') end },
+  { 'catgoose/nvim-colorizer.lua', event = 'BufReadPre', config = function() require('plugins.colorizer') end },
 })
 
 -- load lsp setup

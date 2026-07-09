@@ -20,3 +20,9 @@ o.timeoutlen = 300 -- faster which-key popup (default 1000ms)
 o.undofile = true -- persist undo history across restarts
 o.confirm = true -- prompt to save instead of erroring on :q with unsaved changes
 vim.o.signcolumn = 'yes'
+
+-- Folding (nvim-ufo)
+o.foldcolumn = '1'
+o.foldlevel = 99
+o.foldlevelstart = 99
+o.foldenable = true
