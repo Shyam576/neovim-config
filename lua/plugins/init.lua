@@ -47,6 +47,7 @@ require('lazy').setup({
   { 'lewis6991/gitsigns.nvim', config = function() require('plugins.git') end },
   { 'tpope/vim-fugitive' },
   { 'famiu/bufdelete.nvim' },
+  { 'sindrets/diffview.nvim', dependencies = {'nvim-tree/nvim-web-devicons'}, cmd = {'DiffviewOpen','DiffviewClose','DiffviewFileHistory'}, config = function() require('plugins.diffview') end },
 
   -- diagnostics / lsp ui
   { 'glepnir/lspsaga.nvim', branch = 'main', config = true },
