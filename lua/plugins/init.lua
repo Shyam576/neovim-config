@@ -61,6 +61,9 @@ require('lazy').setup({
   -- github copilot
   { 'zbirenbaum/copilot.lua', cmd = 'Copilot', event = 'InsertEnter', config = function() require('plugins.copilot') end },
   { 'zbirenbaum/copilot-cmp', dependencies = { 'zbirenbaum/copilot.lua' }, config = true },
+
+  -- markdown rendering
+  { 'MeanderingProgrammer/render-markdown.nvim', dependencies = {'nvim-treesitter/nvim-treesitter','nvim-tree/nvim-web-devicons'}, ft = {'markdown'}, config = function() require('plugins.render-markdown') end },
 })
 
 -- load lsp setup
