@@ -124,10 +124,18 @@ These work when you're editing code files (JavaScript, TypeScript, Rust, Python,
 |Shortcut|Action|Description|
 |---|---|---|
 |`gd`|Go to Definition|Jump to where symbol is defined|
+|`gD`|Go to Declaration|Jump to symbol declaration|
+|`gi`|Go to Implementation|Jump to implementation|
+|`gr`|References|List all references to symbol|
+|`gt`|Type Definition|Jump to type definition|
 |`K`|Hover|Show documentation/type info|
+|`<C-k>`|Signature Help|Show function signature while typing args|
 |`<leader>rn`|Rename|Rename symbol across project|
 |`<leader>ca`|Code Action|Show available code actions (fixes)|
 |`<leader>f`|Format|Format current file|
+|`<leader>ai`|Add Missing Imports|Insert imports for unresolved symbols (TS/JS)|
+|`<leader>oi`|Organize Imports|Sort/merge imports, drop unused (TS/JS)|
+|`<leader>ri`|Remove Unused Imports|Strip imports that aren't used (TS/JS)|
 
 ### LSP Diagnostics
 
@@ -157,9 +165,13 @@ Highlights `TODO`, `FIXME`, `HACK`, `NOTE` (etc.) comments with icons.
 |`<leader>st`|Search Todos|List all todo comments in Telescope|
 |`<leader>xt`|Todos (Trouble)|List all todo comments in Trouble|
 
+### Auto-import on Save
+
+For `.js`, `.jsx`, `.ts`, `.tsx` files, missing imports are added and existing imports are organized automatically when you save — no need to press `<leader>ai`/`<leader>oi` manually. This runs before formatting, so the saved file has clean, sorted imports.
+
 ### Auto-format on Save
 
-Files are automatically formatted when you save:
+Files are automatically formatted when you save (via `conform.nvim`):
 
 - `.rs` (Rust)
 - `.js`, `.ts` (JavaScript/TypeScript)
