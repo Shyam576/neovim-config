@@ -1,6 +1,6 @@
 local M = {}
 function M.setup(opts)
-  local servers = { 'lua_ls','ts_ls','eslint','rust_analyzer','html','jsonls' }
+  local servers = { 'lua_ls','ts_ls','eslint','rust_analyzer','gopls','html','jsonls' }
   
   require('mason-lspconfig').setup({ 
     ensure_installed = servers,
@@ -121,6 +121,9 @@ function M.setup(opts)
     elseif server_name == 'rust_analyzer' then
       cfg.filetypes = { 'rust' }
       cfg.root_markers = { 'Cargo.toml', 'rust-project.json' }
+    elseif server_name == 'gopls' then
+      cfg.filetypes = { 'go' }
+      cfg.root_markers = { 'go.work', 'go.mod', '.git' }
     elseif server_name == 'html' then
       cfg.filetypes = { 'html', 'templ' }
       cfg.root_markers = { 'package.json', '.git' }

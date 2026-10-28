@@ -119,7 +119,7 @@ All shortcuts starting with `<leader>` mean you press `Space` first, then th
 
 ## 🔧 LSP Features (Language Server Protocol)
 
-These work when you're editing code files (JavaScript, TypeScript, Rust, Python, Lua, etc.)
+These work when you're editing code files (JavaScript, TypeScript, Rust, Go, Python, Lua, etc.)
 
 |Shortcut|Action|Description|
 |---|---|---|
@@ -174,6 +174,7 @@ For `.js`, `.jsx`, `.ts`, `.tsx` files, missing imports are added and existing i
 Files are automatically formatted when you save (via `conform.nvim`):
 
 - `.rs` (Rust)
+- `.go` (Go, via `goimports` + `gofumpt`)
 - `.js`, `.ts` (JavaScript/TypeScript)
 - `.lua` (Lua)
 - `.py` (Python)

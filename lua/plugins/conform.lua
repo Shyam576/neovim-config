@@ -12,6 +12,7 @@ require('conform').setup({
     html = { 'prettier' },
     css = { 'prettier' },
     rust = { 'rustfmt' },
+    go = { 'goimports', 'gofumpt' },
   },
   format_on_save = {
     timeout_ms = 2000,
